@@ -1,0 +1,10 @@
+[bastion_tower]
+bastion.92c3.example.opentlc.com
+
+[workstation]
+workstation-8bb1.rhpds.opentlc.com
+
+[all:vars]
+ansible_user=sujit.kelassery-accenture.com
+ansible_ssh_private_key_file=/root/.ssh/mykey.pem
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
