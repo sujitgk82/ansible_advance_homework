@@ -17,11 +17,11 @@
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
       curl -o /tmp/internal.repo http://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
       cp /tmp/internal.repo /etc/yum.repos.d/internal.repo
-    with_subelements:
+  with_subelements:
       - "{{osp_servers}}"
       - meta
-    tags:
-      - test.servers
+  tags:
+    - test.servers
 
 - name: Add floating IP to Servers
   os_floating_ip:
@@ -34,7 +34,7 @@
     timeout: 200
   with_dict: "{{osp_servers}}"
   tags:
-  - test.servers
+    - test.servers
 
 - name: OpenStack servers
   os_server_facts:
