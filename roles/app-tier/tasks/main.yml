@@ -5,7 +5,7 @@
     name: "{{payload}}"
     state: latest
 
-- name: enable enable "{{payload}}" at boot at boot
+- name: enable "{{payload}}" at boot
   service:
     name: "{{payload}}"
     enabled: yes
